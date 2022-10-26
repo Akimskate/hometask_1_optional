@@ -11,23 +11,19 @@ class Login extends StatefulWidget {
   State<Login> createState() => _LoginState();
 }
 
-
-
 class _LoginState extends State<Login> {
   final formKey = GlobalKey<FormState>();
   bool _isCheked = false;
   final _loginController = TextEditingController();
   final _passwordController = TextEditingController();
   bool isPasswordVisible = true;
-  SharedPreferences ?loginData;
+  SharedPreferences? loginData;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     remembered();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +63,6 @@ class _LoginState extends State<Login> {
               decoration: InputDecoration(
                 labelText: 'Password',
                 hintText: 'Password',
-                
                 suffixIcon: IconButton(
                   icon: isPasswordVisible
                       ? Icon(Icons.visibility_off)
@@ -107,13 +102,10 @@ class _LoginState extends State<Login> {
                 ElevatedButton(
                   onPressed: () {
                     final isValid = formKey.currentState!.validate();
-                    if (_isCheked == true){
-                    loginData?.setBool('_isCheked', true);
-                    loginData?.setString('login', _loginController.text);
-                    loginData?.setString('password', _passwordController.text);
-                    loginData?.clear();
+                    if (_isCheked == true) {
+                      remember(true);
                     }
-                    print(remembered);
+
                     if (isValid == true) {
                       Navigator.pushReplacement(
                           context,
@@ -140,32 +132,26 @@ class _LoginState extends State<Login> {
     );
   }
 
+  void remember(bool value) async {
+    _isCheked = value;
+    SharedPreferences.getInstance().then(
+      (prefs) {
+        prefs.setBool('remember', value);
+        prefs.setString('login', _loginController.text);
+        prefs.setString('password', _passwordController.text);
+      },
+    );
+  }
 
-void remembered() async {
-  loginData = await SharedPreferences.getInstance();
-  var user = (loginData?.getBool('_isCheked') ?? true);
-  var login = (loginData?.getBool('login') ?? 'admin');
-  var password = (loginData?.getBool('password') ?? '123456');
-  print(user);
-  
+  void remembered() async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    var _remember = _prefs.getBool('remember');
+    var _login = _prefs.getString('login');
+    var _password = _prefs.getString('password');
 
-  if (user == true && login == 'admin' && password == '123456') {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Welcome()));
-
-
-} else {
-  Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Login()));
+    if (_remember == true && _login == 'admin' && _password == '123456') {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => const Welcome()));
+  }
 }
-
-
 }
-
-}
-
-

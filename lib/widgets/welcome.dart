@@ -20,7 +20,7 @@ class Welcome extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => const Login()));
-                          // logout();    
+                          logout();    
                               
                     },
             label: Icon(Icons.logout),
@@ -40,8 +40,11 @@ class Welcome extends StatelessWidget {
     );
   }
 
-//   void logout() async{
-//     SharedPreferences loginData = await SharedPreferences.getInstance();
-// await loginData.getBool('_isCheked, false');
-//   }
+  void logout() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.remove('remember');
+        
+  }
 }
+
+
