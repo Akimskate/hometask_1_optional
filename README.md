@@ -1,16 +1,10 @@
 # hometask_1_optional
 
-A new Flutter project.
+Login app with function "Remember user" and logout.
 
-## Getting Started
+Also used Splash screen (3 seconds duration) when app is initialized.
 
-This project is a starting point for a Flutter application.
+For implementation 'remember' function used Shared Prefecrences library from
+pub.dev.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
