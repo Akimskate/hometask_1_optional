@@ -12,4 +12,6 @@ For login use:
 Login: admin
 Password: 123456
 
+<img align="right" width="100" height="100" src="git_images/login.png">
+
 ![Screenshot](git_images/login.png)
