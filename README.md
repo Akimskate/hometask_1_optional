@@ -14,7 +14,7 @@ Password: 123456
 
 <p float="left">
 <img align="left" width="150" height="300" src="git_images/splash_screen.png">
-<img align="center" width="150" height="300" src="git_images/login.png">
-<img align="right" width="150" height="300" src="git_images/welcome.png">
+<img align="left" width="150" height="300" src="git_images/login.png">
+<img align="center" width="150" height="300" src="git_images/welcome.png">
 </p>
 
