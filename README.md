@@ -11,3 +11,5 @@ pub.dev.
 For login use:
 Login: admin
 Password: 123456
+
+![Screenshot](git_images/login.png)
