@@ -12,7 +12,7 @@ For login use:
 Login: admin
 Password: 123456
 
-<img align="left" width="200" height="600" src="git_images/splash_screen.png">
-<img align="center" width="200" height="600" src="git_images/login.png">
-<img align="right" width="200" height="600" src="git_images/welcome.png">
+<img align="left" width="150" height="300" src="git_images/splash_screen.png">
+<img align="center" width="150" height="300" src="git_images/login.png">
+<img align="right" width="150" height="300" src="git_images/welcome.png">
 
