@@ -8,3 +8,6 @@ For implementation 'remember' function used Shared Prefecrences library from
 pub.dev.
 
 
+For login use:
+Login: admin
+Password: 123456

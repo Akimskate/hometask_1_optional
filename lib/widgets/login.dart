@@ -22,7 +22,7 @@ class _LoginState extends State<Login> {
   @override
   void initState() {
     super.initState();
-    remembered();
+    isRemembered();
   }
 
   @override
@@ -143,7 +143,7 @@ class _LoginState extends State<Login> {
     );
   }
 
-  void remembered() async {
+  void isRemembered() async {
     SharedPreferences _prefs = await SharedPreferences.getInstance();
     var _remember = _prefs.getBool('remember');
     var _login = _prefs.getString('login');
